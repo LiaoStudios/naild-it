@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail'd IT — Atelier di Unghie a Bologna (Corticella)</title>
+    <meta name="description" content="Nail'd IT, atelier di unghie e bellezza a Bologna (Corticella). Manicure, semipermanente, ricostruzione, nail art, pedicure ed estetica. 4,8★ su 1160 recensioni. Prenota online.">
+    <link rel="icon" href="assets/img/logo-transparent.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FBF8F2',
+                        panna: '#F4ECDE',
+                        beige: '#E7D8C1',
+                        sage: '#9DB18C',
+                        'sage-tint': '#E7EDDF',
+                        olive: '#63704F',
+                        'olive-d': '#4B563B',
+                        wood: '#B07A4F',
+                        'wood-d': '#8A5E3B',
+                        'wood-tint': '#F3E5D2',
+                        ink: '#2C2A24',
+                        muted: '#7C7565',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        script: ['"Dancing Script"', 'cursive'],
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --olive: #63704F;
+            --wood: #B07A4F;
+            --cream: #FBF8F2;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--cream);
+            color: #2C2A24;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-script { font-family: 'Dancing Script', cursive; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(46px);
+            transition: all 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-float { animation: floaty 12s ease-in-out infinite; }
+        @keyframes floaty {
+            0%, 100% { transform: rotate(-2deg) translate(0, 0); }
+            50% { transform: rotate(-1deg) translate(0, -16px); }
+        }
+
+        .ornament-corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--wood);
+            pointer-events: none;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2C2A24 0%, var(--wood) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Carousel */
+        #carousel { scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x proximity; }
+        #carousel::-webkit-scrollbar { display: none; }
+        .snap-slide { scroll-snap-align: start; }
+
+        /* Masonry full gallery */
+        .masonry { column-count: 2; column-gap: 1rem; }
+        @media (min-width: 768px) { .masonry { column-count: 3; } }
+        @media (min-width: 1100px) { .masonry { column-count: 4; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-float { animation: none !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body class="bg-cream text-ink">
+
+    <div class="min-h-screen relative">
+
+        <!-- Navigation -->
+        <nav id="main-nav" class="fixed top-0 left-0 right-0 z-[70] transition-all duration-700 py-5">
+            <div class="container mx-auto px-6 md:px-12 flex items-center justify-between">
+                <a href="#top" class="flex items-center">
+                    <img src="assets/img/logo-transparent.png" alt="Nail'd IT" class="h-14 md:h-16 w-auto">
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-14">
+                    <a href="#chi-siamo" class="text-[10px] font-bold uppercase tracking-[0.3em] text-ink hover:text-wood transition-colors">Chi siamo</a>
+                    <a href="#servizi" class="text-[10px] font-bold uppercase tracking-[0.3em] text-ink hover:text-wood transition-colors">Servizi</a>
+                    <a href="#galleria" class="text-[10px] font-bold uppercase tracking-[0.3em] text-ink hover:text-wood transition-colors">Galleria</a>
+                    <a href="#contatti" class="text-[10px] font-bold uppercase tracking-[0.3em] text-ink hover:text-wood transition-colors">Contatti</a>
+                </div>
+
+                <a href="https://www.treatwell.it/salone/naild-it-2/" target="_blank" rel="noopener" class="relative group">
+                    <div class="absolute -inset-1 bg-wood rounded-full blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+                    <span class="relative px-8 py-3.5 bg-wood text-cream rounded-full text-[10px] font-bold tracking-widest uppercase inline-block">Prenota</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section id="top" class="relative min-h-screen flex items-center overflow-hidden bg-cream">
+            <div class="absolute top-[-10%] right-[-5%] w-[42vw] h-[42vw] bg-wood/15 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-[-15%] left-[-10%] w-[36vw] h-[36vw] bg-sage/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <!-- Hero visual: one embedded photo -->
+            <div class="hidden md:block absolute right-[4%] bottom-[6%] w-[38vw] max-w-[480px] z-10">
+                <div class="hero-float relative aspect-[3/4] rounded-[2.5rem] overflow-hidden shadow-2xl border-[14px] border-white">
+                    <img src="assets/img/gallery/g14.jpg" alt="Nail art perlato Nail'd IT" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-wood text-cream px-6 py-4 rounded-2xl shadow-xl">
+                    <span class="block font-serif italic text-lg leading-none">dal 2019</span>
+                    <span class="block text-[9px] uppercase tracking-[0.2em] opacity-80 mt-1">a Corticella</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="container mx-auto px-6 md:px-12 relative z-30">
+                <div class="max-w-4xl pt-32">
+                    <div class="reveal">
+                        <p class="font-script text-4xl text-wood mb-5">Corticella, Bologna</p>
+                        <h1 class="text-6xl md:text-[7.5rem] leading-[0.9] font-serif tracking-tight mb-8 text-ink">
+                            Nail'd IT. <br>
+                            <span class="italic font-light gradient-text">Dove le mani<br class="hidden md:block"> diventano arte.</span>
+                        </h1>
+                    </div>
+
+                    <div class="reveal" style="transition-delay: 200ms;">
+                        <p class="text-lg md:text-xl text-muted max-w-lg mb-10 font-light leading-relaxed">
+                            Un piccolo atelier dove ricostruzione, semipermanente e nail art si incontrano con calma, precisione e tanta cura per il dettaglio. Ogni appuntamento è un momento tutto per te.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-8">
+                            <a href="https://www.treatwell.it/salone/naild-it-2/" target="_blank" rel="noopener" class="px-10 py-5 bg-wood text-cream text-xs font-bold uppercase tracking-[0.3em] hover:bg-wood-d transition-all duration-500 shadow-xl">
+                                Prenota su Treatwell
+                            </a>
+                            <div class="flex flex-col">
+                                <span class="text-olive text-lg leading-none mb-1">
+                                    <iconify-icon icon="material-symbols:star-rounded"></iconify-icon>
+                                    <iconify-icon icon="material-symbols:star-rounded"></iconify-icon>
+                                    <iconify-icon icon="material-symbols:star-rounded"></iconify-icon>
+                                    <iconify-icon icon="material-symbols:star-rounded"></iconify-icon>
+                                    <iconify-icon icon="material-symbols:star-rounded"></iconify-icon>
+                                </span>
+                                <span class="text-[10px] uppercase tracking-widest text-muted">4,8 su 1160 recensioni</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chi siamo (interior) -->
+        <section id="chi-siamo" class="py-28 md:py-40 bg-wood-tint relative overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                    <div class="reveal">
+                        <span class="text-wood font-script text-3xl mb-3 block">Chi siamo</span>
+                        <h2 class="text-4xl md:text-6xl font-serif leading-tight mb-10 text-ink">
+                            Un salone di quartiere, con <span class="italic text-wood">anima artigiana.</span>
+                        </h2>
+                        <div class="space-y-6 text-lg text-muted font-light leading-relaxed">
+                            <p>Nail'd IT nasce a Bologna, in zona Corticella, dall'idea di offrire un servizio curato senza perdere mai il calore di un salone di fiducia. Legno naturale, luce morbida e una squadra che conosce ogni cliente per nome: qui la bellezza si prende il suo tempo.</p>
+                            <p>Lavoriamo con prodotti selezionati e le tecniche più aggiornate di ricostruzione e nail art, ma quello che ci contraddistingue è l'ascolto: ogni trattamento comincia da una chiacchierata su cosa desideri davvero per le tue mani.</p>
+                        </div>
+                        <div class="mt-10 flex flex-wrap gap-4">
+                            <span class="inline-flex items-center gap-2 bg-white/70 border border-wood/20 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                                <iconify-icon icon="lucide:sparkles" class="text-wood"></iconify-icon> Accoglienza vera
+                            </span>
+                            <span class="inline-flex items-center gap-2 bg-white/70 border border-wood/20 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                                <iconify-icon icon="lucide:heart" class="text-wood"></iconify-icon> Solo su appuntamento
+                            </span>
+                            <span class="inline-flex items-center gap-2 bg-white/70 border border-wood/20 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest">
+                                <iconify-icon icon="lucide:map-pin" class="text-wood"></iconify-icon> Corticella, Bologna
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="reveal relative flex justify-center" style="transition-delay: 250ms;">
+                        <div class="relative w-full max-w-md aspect-[3/4]">
+                            <div class="absolute -inset-6 border border-wood/30"></div>
+                            <div class="absolute -inset-3 border border-wood/60"></div>
+                            <img src="assets/img/interno-1.jpg" alt="Interni del salone Nail'd IT" class="w-full h-full object-cover shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perché sceglierci (wood band) -->
+        <section class="py-24 md:py-28 bg-wood text-cream relative overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <div class="reveal text-center max-w-2xl mx-auto mb-16">
+                    <span class="font-script text-3xl text-cream/80 mb-2 block">Perché sceglierci</span>
+                    <h2 class="text-4xl md:text-5xl font-serif">Il nostro modo di lavorare</h2>
+                </div>
+                <div class="grid sm:grid-cols-3 gap-10 md:gap-14 max-w-4xl mx-auto text-center">
+                    <div class="reveal">
+                        <iconify-icon icon="lucide:gem" class="text-4xl mb-4 block"></iconify-icon>
+                        <h3 class="font-serif text-xl mb-2">Materiali di qualità</h3>
+                        <p class="text-cream/75 text-sm leading-relaxed font-light">Smalti, gel e prodotti selezionati per una tenuta impeccabile nel tempo.</p>
+                    </div>
+                    <div class="reveal" style="transition-delay: 150ms;">
+                        <iconify-icon icon="lucide:shield-check" class="text-4xl mb-4 block"></iconify-icon>
+                        <h3 class="font-serif text-xl mb-2">Igiene prima di tutto</h3>
+                        <p class="text-cream/75 text-sm leading-relaxed font-light">Strumenti sterilizzati e ambiente curato ad ogni singolo appuntamento.</p>
+                    </div>
+                    <div class="reveal" style="transition-delay: 300ms;">
+                        <iconify-icon icon="lucide:pencil-ruler" class="text-4xl mb-4 block"></iconify-icon>
+                        <h3 class="font-serif text-xl mb-2">Nail art su misura</h3>
+                        <p class="text-cream/75 text-sm leading-relaxed font-light">Ogni disegno nasce da un confronto con te, per un risultato che è solo tuo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servizi -->
+        <section id="servizi" class="py-28 md:py-40 bg-cream relative">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="reveal text-center mb-20 md:mb-28">
+                    <h2 class="text-5xl md:text-7xl font-serif text-ink">Trattamenti su <span class="italic text-wood">misura</span></h2>
+                    <p class="font-script text-3xl text-wood mt-3">Dalla A alla Z, per ogni esigenza</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+                    <!-- Card 1 -->
+                    <div class="reveal group relative">
+                        <div class="ornament-corner top-0 left-0 border-r-0 border-b-0"></div>
+                        <div class="ornament-corner bottom-0 right-0 border-l-0 border-t-0"></div>
+                        <div class="bg-panna p-10 lg:p-12 h-full transition-all duration-700 group-hover:bg-white group-hover:shadow-2xl">
+                            <span class="text-4xl font-serif text-wood block mb-7">01.</span>
+                            <h3 class="text-2xl md:text-3xl font-serif mb-5 text-ink">Mani perfette, ogni giorno</h3>
+                            <p class="text-muted mb-8 leading-relaxed">Manicure con o senza smalto e applicazione o cambio del semipermanente, per mani sempre curate e a lunga durata.</p>
+                            <ul class="space-y-3 text-xs uppercase tracking-widest font-bold text-ink">
+                                <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Manicure</span> <span class="text-muted">€13–15</span></li>
+                                <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Semipermanente</span> <span class="text-muted">€25</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (highlight) -->
+                    <div class="reveal group relative md:mt-16">
+                        <div class="ornament-corner top-0 left-0 border-r-0 border-b-0"></div>
+                        <div class="ornament-corner bottom-0 right-0 border-l-0 border-t-0"></div>
+                        <div class="bg-wood-tint p-10 lg:p-12 h-full transition-all duration-700 group-hover:scale-[1.02] group-hover:shadow-2xl border border-wood/15">
+                            <span class="text-4xl font-serif text-wood block mb-7">02.</span>
+                            <h3 class="text-2xl md:text-3xl font-serif mb-5 text-ink">La tua firma sulle unghie</h3>
+                            <p class="text-muted mb-8 leading-relaxed">Allungamenti in gel e refill con architetture perfette, più decori a mano libera: fiori 3D, cat-eye, effetti ombré e dettagli gioiello.</p>
+                            <ul class="space-y-3 text-xs uppercase tracking-widest font-bold text-ink">
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Gel &amp; Refill</li>
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Nail art su misura</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="reveal group relative">
+                        <div class="ornament-corner top-0 left-0 border-r-0 border-b-0"></div>
+                        <div class="ornament-corner bottom-0 right-0 border-l-0 border-t-0"></div>
+                        <div class="bg-panna p-10 lg:p-12 h-full transition-all duration-700 group-hover:bg-white group-hover:shadow-2xl">
+                            <span class="text-4xl font-serif text-wood block mb-7">03.</span>
+                            <h3 class="text-2xl md:text-3xl font-serif mb-5 text-ink">Cura dalla testa ai piedi</h3>
+                            <p class="text-muted mb-8 leading-relaxed">Pedicure curativa ed estetica, ceretta, pulizia del viso, trattamenti ciglia e massaggi rilassanti per prenderti cura di te a 360°.</p>
+                            <ul class="space-y-3 text-xs uppercase tracking-widest font-bold text-ink">
+                                <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Pedicure</span> <span class="text-muted">da €10</span></li>
+                                <li class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-wood"></iconify-icon> Ceretta / Ciglia</span> <span class="text-muted">da €5</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listino compatto -->
+                <div class="reveal mt-16 md:mt-20 max-w-4xl mx-auto bg-white/60 border border-wood/15 p-8 md:p-12">
+                    <h3 class="font-serif text-2xl md:text-3xl text-ink mb-8 text-center">Il listino, <span class="italic text-wood">senza sorprese</span></h3>
+                    <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4 text-sm">
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Manicure (senza smalto)</span><span class="font-bold text-wood">€13</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Manicure (con smalto)</span><span class="font-bold text-wood">€15</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Cambio semipermanente</span><span class="font-bold text-wood">€25</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Pedicure</span><span class="font-bold text-wood">da €10</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Ceretta sopracciglia</span><span class="font-bold text-wood">€7</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Ceretta baffetti</span><span class="font-bold text-wood">€5</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Pulizia viso</span><span class="font-bold text-wood">€45</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Massaggio rilassante</span><span class="font-bold text-wood">€30–55</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Trattamenti ciglia</span><span class="font-bold text-wood">€15–50</span></div>
+                        <div class="flex items-baseline justify-between gap-3 border-b border-wood/15 pb-2"><span>Ricostruzione / Nail art</span><span class="font-bold text-wood">su preventivo</span></div>
+                    </div>
+                    <p class="text-xs text-muted mt-6 text-center">I prezzi possono variare in base al trattamento. Contattaci per un preventivo su misura.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galleria (curated carousel) -->
+        <section id="galleria" class="py-28 md:py-40 bg-panna overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col lg:flex-row gap-8 lg:items-end mb-14 md:mb-16">
+                    <h2 class="text-5xl md:text-7xl font-serif flex-1 leading-none text-ink">Ogni mano, <br><span class="italic text-wood">una storia diversa.</span></h2>
+                    <p class="text-muted max-w-xs text-sm uppercase tracking-widest font-bold border-l-2 border-wood pl-6">Una selezione dei lavori più recenti realizzati nel nostro atelier.</p>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 md:px-12 relative">
+                <div id="carousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-6 -mx-6 px-6 md:mx-0 md:px-0">
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/nail-01.jpg" alt="Nail art floreale rosa" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/nail-04.jpg" alt="Nail art cat-eye lilla" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g01.jpg" alt="Nail art ombré anguria" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g02.jpg" alt="Nail art ombré azzurro" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g05.jpg" alt="Nail art con strass" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g07.jpg" alt="Nail art cat-eye galassia" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g08.jpg" alt="Nail art chrome cangiante" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g10.jpg" alt="Nail art pastello arcobaleno" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g12.jpg" alt="Nail art galassia scintillante" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g15.jpg" alt="Nail art magnetico petrolio" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g16.jpg" alt="Nail art rosso con stelline" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                    <figure class="snap-slide w-[220px] md:w-[300px] h-[300px] md:h-[420px] flex-shrink-0 relative overflow-hidden group m-0 rounded-sm">
+                        <img src="assets/img/gallery/g20.jpg" alt="Nail art fiori bianchi e neri" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    </figure>
+                </div>
+
+                <!-- Arrows -->
+                <button onclick="document.getElementById('carousel').scrollBy({left:-340,behavior:'smooth'})" aria-label="Scorri a sinistra" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-14 h-14 rounded-full bg-cream border border-wood/25 text-wood items-center justify-center shadow-lg hover:bg-wood hover:text-cream transition-colors">
+                    <iconify-icon icon="lucide:chevron-left" class="text-2xl"></iconify-icon>
+                </button>
+                <button onclick="document.getElementById('carousel').scrollBy({left:340,behavior:'smooth'})" aria-label="Scorri a destra" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-14 h-14 rounded-full bg-cream border border-wood/25 text-wood items-center justify-center shadow-lg hover:bg-wood hover:text-cream transition-colors">
+                    <iconify-icon icon="lucide:chevron-right" class="text-2xl"></iconify-icon>
+                </button>
+            </div>
+
+            <div class="reveal text-center mt-14">
+                <a href="#galleria-completa" class="inline-flex items-center gap-3 px-10 py-5 border-2 border-wood text-wood text-xs font-bold uppercase tracking-[0.3em] hover:bg-wood hover:text-cream transition-all duration-500">
+                    Mostra tutta la galleria <iconify-icon icon="lucide:arrow-down" class="text-base"></iconify-icon>
+                </a>
+            </div>
+        </section>
+
+        <!-- Galleria completa -->
+        <section id="galleria-completa" class="py-28 md:py-40 bg-cream">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="reveal text-center max-w-2xl mx-auto mb-16">
+                    <span class="font-script text-4xl text-wood mb-3 block">L'archivio completo</span>
+                    <h2 class="text-4xl md:text-6xl font-serif leading-none tracking-tight text-ink">Tutte le nostre <span class="italic text-wood">creazioni</span></h2>
+                    <p class="text-muted mt-5">78 lavori realizzati nel nostro atelier. Nuove foto in arrivo ogni settimana.</p>
+                </div>
+
+                <div class="masonry">
+                    <img src="assets/img/nail-01.jpg" alt="Nail art Nail'd IT 1" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-02.jpg" alt="Nail art Nail'd IT 2" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-03.jpg" alt="Nail art Nail'd IT 3" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-04.jpg" alt="Nail art Nail'd IT 4" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-05.jpg" alt="Nail art Nail'd IT 5" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-06.jpg" alt="Nail art Nail'd IT 6" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-07.jpg" alt="Nail art Nail'd IT 7" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/nail-08.jpg" alt="Nail art Nail'd IT 8" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g01.jpg" alt="Nail art Nail'd IT 9" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g02.jpg" alt="Nail art Nail'd IT 10" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g03.jpg" alt="Nail art Nail'd IT 11" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g04.jpg" alt="Nail art Nail'd IT 12" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g05.jpg" alt="Nail art Nail'd IT 13" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g06.jpg" alt="Nail art Nail'd IT 14" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g07.jpg" alt="Nail art Nail'd IT 15" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g08.jpg" alt="Nail art Nail'd IT 16" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g09.jpg" alt="Nail art Nail'd IT 17" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g10.jpg" alt="Nail art Nail'd IT 18" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g11.jpg" alt="Nail art Nail'd IT 19" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g12.jpg" alt="Nail art Nail'd IT 20" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g13.jpg" alt="Nail art Nail'd IT 21" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g14.jpg" alt="Nail art Nail'd IT 22" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g15.jpg" alt="Nail art Nail'd IT 23" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g16.jpg" alt="Nail art Nail'd IT 24" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g17.jpg" alt="Nail art Nail'd IT 25" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g18.jpg" alt="Nail art Nail'd IT 26" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g19.jpg" alt="Nail art Nail'd IT 27" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g20.jpg" alt="Nail art Nail'd IT 28" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g21.jpg" alt="Nail art Nail'd IT 29" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g22.jpg" alt="Nail art Nail'd IT 30" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g23.jpg" alt="Nail art Nail'd IT 31" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g24.jpg" alt="Nail art Nail'd IT 32" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g25.jpg" alt="Nail art Nail'd IT 33" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g26.jpg" alt="Nail art Nail'd IT 34" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g27.jpg" alt="Nail art Nail'd IT 35" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g28.jpg" alt="Nail art Nail'd IT 36" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g29.jpg" alt="Nail art Nail'd IT 37" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g30.jpg" alt="Nail art Nail'd IT 38" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g31.jpg" alt="Nail art Nail'd IT 39" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g32.jpg" alt="Nail art Nail'd IT 40" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g33.jpg" alt="Nail art Nail'd IT 41" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g34.jpg" alt="Nail art Nail'd IT 42" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g35.jpg" alt="Nail art Nail'd IT 43" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g36.jpg" alt="Nail art Nail'd IT 44" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g37.jpg" alt="Nail art Nail'd IT 45" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g38.jpg" alt="Nail art Nail'd IT 46" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g39.jpg" alt="Nail art Nail'd IT 47" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g40.jpg" alt="Nail art Nail'd IT 48" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g41.jpg" alt="Nail art Nail'd IT 49" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g42.jpg" alt="Nail art Nail'd IT 50" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g43.jpg" alt="Nail art Nail'd IT 51" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g44.jpg" alt="Nail art Nail'd IT 52" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g45.jpg" alt="Nail art Nail'd IT 53" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g46.jpg" alt="Nail art Nail'd IT 54" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g47.jpg" alt="Nail art Nail'd IT 55" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g48.jpg" alt="Nail art Nail'd IT 56" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g49.jpg" alt="Nail art Nail'd IT 57" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g50.jpg" alt="Nail art Nail'd IT 58" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g51.jpg" alt="Nail art Nail'd IT 59" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g52.jpg" alt="Nail art Nail'd IT 60" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g53.jpg" alt="Nail art Nail'd IT 61" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g54.jpg" alt="Nail art Nail'd IT 62" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g55.jpg" alt="Nail art Nail'd IT 63" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g56.jpg" alt="Nail art Nail'd IT 64" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g57.jpg" alt="Nail art Nail'd IT 65" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g58.jpg" alt="Nail art Nail'd IT 66" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g59.jpg" alt="Nail art Nail'd IT 67" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g60.jpg" alt="Nail art Nail'd IT 68" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g61.jpg" alt="Nail art Nail'd IT 69" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g62.jpg" alt="Nail art Nail'd IT 70" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g63.jpg" alt="Nail art Nail'd IT 71" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g64.jpg" alt="Nail art Nail'd IT 72" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g65.jpg" alt="Nail art Nail'd IT 73" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g66.jpg" alt="Nail art Nail'd IT 74" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g67.jpg" alt="Nail art Nail'd IT 75" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g68.jpg" alt="Nail art Nail'd IT 76" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g69.jpg" alt="Nail art Nail'd IT 77" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                    <img src="assets/img/gallery/g70.jpg" alt="Nail art Nail'd IT 78" loading="lazy" class="w-full mb-4 break-inside-avoid rounded-sm shadow-sm hover:shadow-lg transition-shadow duration-500">
+                </div>
+
+                <div class="reveal text-center mt-16">
+                    <a href="#galleria" class="inline-flex items-center gap-3 text-wood text-xs font-bold uppercase tracking-[0.3em] hover:text-wood-d transition-colors">
+                        <iconify-icon icon="lucide:arrow-up" class="text-base"></iconify-icon> Torna alla selezione
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contatti -->
+        <section id="contatti" class="py-28 md:py-40 bg-wood-tint relative">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="reveal text-center max-w-2xl mx-auto mb-16">
+                    <span class="font-script text-4xl text-wood mb-3 block">Ti aspettiamo</span>
+                    <h2 class="text-5xl md:text-7xl font-serif leading-none tracking-tight text-ink">Prenota il tuo <span class="italic text-wood">momento</span></h2>
+                    <p class="text-muted mt-5">Siamo a Bologna, zona Corticella. Scrivici o prenota online: bastano due minuti.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch max-w-5xl mx-auto">
+                    <div class="reveal bg-white/70 p-8 md:p-12">
+                        <div class="flex gap-4 py-5 border-b border-wood/15">
+                            <iconify-icon icon="lucide:map-pin" class="text-wood text-2xl shrink-0"></iconify-icon>
+                            <div>
+                                <span class="block text-[10px] uppercase tracking-[0.15em] text-muted">Indirizzo</span>
+                                <span class="block font-semibold text-lg text-ink">Via di Corticella, 55A — 40128 Bologna (BO)</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 py-5 border-b border-wood/15">
+                            <iconify-icon icon="lucide:phone" class="text-wood text-2xl shrink-0"></iconify-icon>
+                            <div>
+                                <span class="block text-[10px] uppercase tracking-[0.15em] text-muted">Telefono</span>
+                                <a href="tel:3762370301" class="block font-semibold text-lg text-ink hover:text-wood">376 237 0301</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 py-5 border-b border-wood/15">
+                            <iconify-icon icon="lucide:clock" class="text-wood text-2xl shrink-0"></iconify-icon>
+                            <div>
+                                <span class="block text-[10px] uppercase tracking-[0.15em] text-muted">Orari</span>
+                                <span class="block font-semibold text-lg text-ink">Lun–Sab 09:00–20:30 · Dom chiuso</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-4 mt-8">
+                            <a href="https://www.treatwell.it/salone/naild-it-2/" target="_blank" rel="noopener" class="px-8 py-4 bg-wood text-cream text-xs font-bold uppercase tracking-[0.25em] hover:bg-wood-d transition-colors">Prenota su Treatwell</a>
+                            <a href="https://wa.me/393762370301" target="_blank" rel="noopener" class="px-8 py-4 border border-olive text-olive text-xs font-bold uppercase tracking-[0.25em] hover:bg-olive hover:text-cream transition-colors inline-flex items-center gap-2"><iconify-icon icon="ri:whatsapp-line"></iconify-icon> WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <a class="reveal group relative flex flex-col justify-end min-h-[320px] p-8 md:p-12 bg-sage-tint overflow-hidden" href="https://www.google.com/maps/place/Nail'd+IT/data=!4m7!3m6!1s0x477fd30022b95fbb:0xa25c2f209cf7c349!8m2!3d44.5163022!4d11.347847" target="_blank" rel="noopener">
+                        <div class="absolute inset-0 bg-sage/20 group-hover:bg-sage/30 transition-colors"></div>
+                        <iconify-icon icon="lucide:map" class="absolute top-8 right-8 text-olive/40 text-6xl"></iconify-icon>
+                        <div class="relative">
+                            <b class="font-serif text-2xl text-ink block">Apri su Google Maps</b>
+                            <span class="text-muted">Indicazioni stradali per l'atelier</span>
+                            <span class="mt-6 inline-block bg-olive text-cream px-7 py-3 rounded-full text-xs font-bold uppercase tracking-widest">Vai</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-16 md:py-20 bg-panna text-ink border-t border-wood/15">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+                    <div class="max-w-md">
+                        <img src="assets/img/logo-transparent.png" alt="Nail'd IT" class="h-16 w-auto mb-6">
+                        <p class="text-muted text-sm leading-relaxed mb-8">
+                            Nail'd IT è l'atelier di unghie e bellezza nel cuore di Corticella, Bologna. Manicure, ricostruzione, nail art e trattamenti estetici in uno spazio curato nei minimi dettagli.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://www.treatwell.it/salone/naild-it-2/" target="_blank" rel="noopener" aria-label="Treatwell" class="w-11 h-11 rounded-full border border-wood/25 flex items-center justify-center text-wood hover:bg-wood hover:text-cream transition-colors">
+                                <iconify-icon icon="lucide:calendar-heart" class="text-lg"></iconify-icon>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full border border-wood/25 flex items-center justify-center text-wood hover:bg-wood hover:text-cream transition-colors">
+                                <iconify-icon icon="ri:instagram-line" class="text-lg"></iconify-icon>
+                            </a>
+                            <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full border border-wood/25 flex items-center justify-center text-wood hover:bg-wood hover:text-cream transition-colors">
+                                <iconify-icon icon="ri:facebook-fill" class="text-lg"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-12 md:gap-16">
+                        <div class="space-y-4">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-wood font-bold">Naviga</p>
+                            <ul class="space-y-2 text-sm text-muted">
+                                <li><a href="#chi-siamo" class="hover:text-ink">Chi siamo</a></li>
+                                <li><a href="#servizi" class="hover:text-ink">Servizi</a></li>
+                                <li><a href="#galleria" class="hover:text-ink">Galleria</a></li>
+                                <li><a href="#contatti" class="hover:text-ink">Contatti</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-wood font-bold">Info</p>
+                            <ul class="space-y-2 text-sm text-muted">
+                                <li>Via di Corticella, 55A, Bologna</li>
+                                <li><a href="tel:3762370301" class="hover:text-ink">376 237 0301</a></li>
+                                <li>Lun–Sab 09:00–20:30</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-wood/15 flex flex-col md:flex-row justify-between gap-4 text-[10px] uppercase tracking-widest text-muted">
+                    <p>© 2026 Nail'd IT · Bologna (Corticella)</p>
+                    <p>Bozza dimostrativa · Foto © Nail'd IT</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile call bar -->
+    <div class="fixed sm:hidden left-3 right-3 bottom-3 z-[80] flex gap-2">
+        <a href="https://www.treatwell.it/salone/naild-it-2/" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-wood text-cream font-bold text-sm shadow-2xl">
+            <iconify-icon icon="lucide:calendar-heart"></iconify-icon> Prenota
+        </a>
+        <a href="https://wa.me/393762370301" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-white text-ink font-bold text-sm border border-wood/20 shadow-2xl">
+            <iconify-icon icon="ri:whatsapp-line" class="text-wood"></iconify-icon> WhatsApp
+        </a>
+    </div>
+
+    <script>
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Nav shrink / background on scroll
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('bg-cream/85', 'backdrop-blur-xl', 'py-3', 'shadow-md');
+                nav.classList.remove('py-5');
+            } else {
+                nav.classList.remove('bg-cream/85', 'backdrop-blur-xl', 'py-3', 'shadow-md');
+                nav.classList.add('py-5');
+            }
+        });
+    </script>
+</body>
+</html>
