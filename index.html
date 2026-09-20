@@ -126,9 +126,20 @@
         </nav>
 
         <!-- Hero -->
-        <section id="top" class="relative min-h-screen flex items-center overflow-hidden bg-cream">
+        <section id="top" class="relative md:min-h-screen flex flex-col md:flex-row items-stretch md:items-center overflow-hidden bg-cream pb-10 md:pb-0">
             <div class="absolute top-[-10%] right-[-5%] w-[42vw] h-[42vw] bg-wood/15 rounded-full blur-[120px] pointer-events-none"></div>
             <div class="absolute bottom-[-15%] left-[-10%] w-[36vw] h-[36vw] bg-sage/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <!-- Hero visual (mobile): foto in alto, la card del titolo sale a sovrapporsi -->
+            <div class="md:hidden relative z-10 px-6 pt-24">
+                <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+                    <img src="assets/img/gallery/g14.jpg" alt="Nail art perlato Nail'd IT" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-wood text-cream px-4 py-3 rounded-xl shadow-xl">
+                        <span class="block font-serif italic text-base leading-none">dal 2019</span>
+                        <span class="block text-[8px] uppercase tracking-[0.2em] opacity-80 mt-1">a Corticella</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- Hero visual: one embedded photo -->
             <div class="hidden md:block absolute right-[4%] bottom-[6%] w-[38vw] max-w-[480px] z-10">
@@ -143,7 +154,7 @@
 
             <!-- Content -->
             <div class="container mx-auto px-6 md:px-12 relative z-30">
-                <div class="max-w-4xl pt-32">
+                <div class="max-w-4xl relative -mt-12 pt-8 px-2 bg-cream rounded-t-[1.75rem] shadow-[0_-18px_30px_-24px_rgba(18,18,18,0.25)] md:mt-0 md:pt-32 md:px-0 md:bg-transparent md:rounded-none md:shadow-none">
                     <div class="reveal">
                         <p class="font-script text-4xl text-wood mb-5">Corticella, Bologna</p>
                         <h1 class="text-6xl md:text-[7.5rem] leading-[0.9] font-serif tracking-tight mb-8 text-ink">
